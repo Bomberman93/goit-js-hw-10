@@ -21,14 +21,14 @@ function inputCountry (event) {
 
 
 /*--------------Создает разметку для ЮЛ------------*/ 
-// function randerCoutryCard (names) {
-//     console.log(names);
-//     const markup = names.map(name =>
-//     {`<li><img src="${name.flags.svg}"/></li>`
-//     // countrylistEl.innerHTML = markup;
-//     })
-// }
-// randerCoutryCard(`Ukraine`);
+function randerCoutryCard (names) {
+    console.log(names);
+    const markup = names.map(name =>
+    {`<li><img src="${name.flags.svg}"/></li>`
+    countrylistEl.innerHTML = markup;
+    })
+}
+randerCoutryCard(`Ukraine`);
 
 // fetchCountries(name).then(data => {
 // const markup = Object.entries(data).map(([key, value]) =>
