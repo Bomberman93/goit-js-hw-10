@@ -8,13 +8,14 @@ const DEBOUNCE_DELAY = 300;
 const countrylistEl = document.querySelector('.country-list');
 const searchInputEl = document.querySelector('#search-box');
 const countryinfoEl = document.querySelector('.country-info');
-// const searchInputElVALue = searchInputEl.value.trim();
 
 searchInputEl.addEventListener('input', debounce(inputCountry, DEBOUNCE_DELAY));
 
 function inputCountry(e) {
   const search = e.target.value.trim();
- 
+  if (search === ""){
+  return searchInputEl.innerHTML = "",  countryinfoEl.innerHTML = "";
+}
   fetchCountries(search)
     .then(country => {
       if (country.length > 10) {
